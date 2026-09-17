@@ -15,13 +15,19 @@
 | build-essential | 12.8ubuntu1.1 |
 | FFmpeg | 4.2.7 |
 | GStreamer tools | 1.18.5 |
-| Git | 未安装 |
+| Git | 2.25.1，`/usr/bin/git` |
 | Ninja / Meson / Clang | 未检测到 |
 | Java / Node.js / Go / Rust | 未检测到 |
 | Docker / Podman | 未检测到 |
 | ROS / colcon / catkin | 未检测到 |
 
 板上没有发现位于 `rknn-toolkit2_backup` 之外的 `CMakeCache.txt`，因此当前保留的是部署产物和源码快照，没有可直接增量重建的本地 CMake build tree。
+
+## 环境文档仓库
+
+Git 当前只用于 `/home/cat/Documents/env_notes` 环境文档仓库，并没有自动给现有模型、SDK 或源码快照补上版本历史。仓库本地配置为 `main` 分支、`pull.ff=only`，远端使用专用 SSH 别名 `github-lubancat-env` 访问私有仓库 `WHKLY/lubancat-env-notes`。
+
+Deploy Key 私钥位于 `~/.ssh`，不进入环境仓库。模型、图片、日志、SDK 和构建产物继续保留在仓库外。
 
 ## Python 推理环境
 

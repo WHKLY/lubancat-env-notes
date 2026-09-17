@@ -15,7 +15,7 @@
 | `/home/cat/yolov10-main(airochip)/yolov10-main` | 5.6 MB | Ultralytics/YOLOv10 源码快照，内部版本 8.1.34 |
 | `/home/cat/0718_final.rknn` | 15.7 MiB | 自定义 RKNN 模型，由 `hit/yolov10_rknn_integrated.py` 默认加载 |
 
-`/home/cat`、`/opt` 和 `/usr/local/src` 中没有发现 `.git` 目录；板上也没有 Git 命令。因此这些目录是无版本历史的文件快照，无法仅凭板端确认上游提交、分支或本地修改范围。
+除 `/home/cat/Documents/env_notes` 环境文档仓库外，在主要项目目录、`/opt` 和 `/usr/local/src` 中没有发现 `.git` 目录。因此下述源码、模型和二进制仍是无版本历史的文件快照，无法仅凭板端确认上游提交、分支或本地修改范围。后来安装 Git 不会为这些既有目录自动恢复历史。
 
 ## RKNN Toolkit 与 Runtime
 

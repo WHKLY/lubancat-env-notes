@@ -26,3 +26,11 @@
 - 创建 `/home/cat/Documents/env_notes`，后续用结构化文档记录板子自身环境和已构建内容。
 - 完成板端环境快照：记录系统与硬件、USB 网络与开放服务、编译/Python/RKNN 工具链、源码快照、模型和已编译 ARM64 程序。
 - 记录但未擅自修复以下既有风险：`/etc` 与 `/usr` 的异常属主/组写权限、UFW inactive、多个远程服务对外监听、部分模型/程序权限为 777，以及重复的 Python 环境路径。
+
+### Git 版本管理
+
+- 安装 Git 2.25.1，未执行系统全面升级。
+- 以普通用户 `cat` 将 `/home/cat/Documents/env_notes` 初始化为 `main` 分支的独立仓库。
+- 创建板子专用 SSH Deploy Key `LubanCat Ubuntu20 eMMC`；私钥保留在板端，GitHub 端仅授予私有仓库 `WHKLY/lubancat-env-notes` 写权限。
+- 完成首次提交和 push；首次远端提交为 `0cecfe369d8ae89296a99bbca4afd897a8b74814`。
+- 首次 push 后复核全部环境文档，修正“Git 未安装”和“本目录不是仓库”等过时状态；本次修订经用户确认后提交。

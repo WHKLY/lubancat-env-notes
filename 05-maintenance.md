@@ -48,13 +48,31 @@ USB 直连实验环境中这些入口可能是有意的；接入不受信网络�
 
 `.bashrc` 重复三次加入 Python 3.8 user site，并加入不存在的 Python 3.9 user site；还全局把 `/usr/lib` 前置到 `LD_LIBRARY_PATH`。当前推理可用，但长期可能造成包或动态库来源混淆。
 
-### 5. 源码和产物缺少版本历史
+### 5. 源码和产物仍缺少版本历史
 
-板端没有 Git，也没有 `.git` 元数据；主要目录中未发现保留的 CMake build tree。模型、源码快照和二进制的精确来源无法从板端独立还原。当前文档中的哈希只能确认之后是否变化，不能替代上游提交信息和构建配方。
+板端现已安装 Git，但只有 `/home/cat/Documents/env_notes` 环境文档纳入版本管理。主要工程目录仍没有 `.git` 元数据，也未发现保留的 CMake build tree。模型、源码快照和二进制的精确来源无法从板端独立还原。当前文档中的哈希只能确认之后是否变化，不能替代上游提交信息和构建配方。
 
 ### 6. 无 swap
 
 当前 7.7 GiB 内存通常足以运行板端推理，但大模型转换、并行编译或内存泄漏时没有 swap 缓冲。不要因此默认在板上执行完整训练或大规模转换任务。
+
+## 环境文档 Git 维护
+
+仓库由普通用户 `cat` 维护，远端为 GitHub 私有仓库。日常更新前后执行：
+
+~~~bash
+cd /home/cat/Documents/env_notes
+git status --short --branch
+git diff
+git add <本次明确修改的文档>
+git diff --cached --check
+git diff --cached
+git commit -m "docs: describe the verified change"
+git pull --ff-only
+git push
+~~~
+
+不要提交密码、Token、SSH 文件、NetworkManager 连接原文件、ZeroTier 身份、NoMachine 缓存、模型、图片、日志或构建产物。换系统或启动介质时生成新的 Deploy Key，不复制当前私钥。
 
 ## 快速健康检查
 
