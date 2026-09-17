@@ -1,0 +1,17 @@
+*.log
+*.tmp
+*.swp
+*~
+*.deb
+
+*.rknn
+*.onnx
+*.pt
+*.engine
+*.bin
+*.jpg
+*.jpeg
+*.png
+
+.nx/
+.ssh/
